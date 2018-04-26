@@ -7,6 +7,7 @@ from gym import error, spaces, utils
 from gym.utils import seeding
 
 from vizdoom import DoomGame
+import os
 
 # vizdoom
 MAP_NAME_TEMPLATE = 'map%02d'
@@ -30,9 +31,12 @@ NET_HEIGHT = 120
 NET_CHANNELS = 3
 STATE_AFTER_GAME_END = np.zeros((NET_HEIGHT, NET_WIDTH, NET_CHANNELS), dtype=np.uint8)
 
+__location__ = os.path.realpath(
+    os.path.join(os.getcwd(), os.path.dirname(__file__)))
+
 # general
-DEFAULT_CONFIG = '/home/nsavinov/projects/gym-vizdoom/gym_vizdoom/envs/default.cfg'
-TRAIN_WAD = '/home/nsavinov/projects/gym-vizdoom/gym_vizdoom/envs/D3_exploration_train.wad_manymaps.wad_exploration.wad'
+DEFAULT_CONFIG = os.path.join(__location__, 'default.cfg')
+TRAIN_WAD = os.path.join(__location__, 'D3_exploration_train.wad_manymaps.wad_exploration.wad')
 
 class VizdoomEnv(gym.Env):
   metadata = {'render.modes': ['human', 'rgb_array']}
