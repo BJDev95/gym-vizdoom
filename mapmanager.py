@@ -158,7 +158,9 @@ class MapManager(Environment):
     def get_target_image(self, map = "map00"):
         mapnumber = map[3:] #very specific to map name format "map000"
         mapnumber = int(mapnumber)
-        return self.target_images[:,:, mapnumber]
+        temp=self.target_images[:,:, mapnumber]
+        ti= temp[:, :, np.newaxis]
+        return ti
 
     def imagedisplay(self, image, name = "image"):
         #cv2.imshow(name, image)
