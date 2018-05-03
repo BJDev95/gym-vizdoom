@@ -59,7 +59,7 @@ class MapManager(Environment):
     """
     Base environment class.
     """
-    def __init__(self, height = 84, width = 84 ,firstmap = 2, lastmap = 400, render=False):
+    def __init__(self, height = 84, width = 84 ,firstmap = 2, lastmap = 400, render = False):
 
         self.iterator = firstmap #increases to iterate through maps start with firstmap
         self.firstmap = firstmap #should be larger or equal 1 , 0 is black image
