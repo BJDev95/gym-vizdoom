@@ -36,7 +36,7 @@ __location__ = os.path.realpath(
 
 # general
 DEFAULT_CONFIG = os.path.join(__location__, 'default.cfg')
-TRAIN_WAD = os.path.join(__location__, 'D3_exploration_train.wad_manymaps.wad_exploration.wad')
+TRAIN_WAD = os.path.join(__location__, 'D3_exploration_train.wad_manymaps.wad_navigation.wad')
 
 class VizdoomEnv(gym.Env):
   metadata = {'render.modes': ['human', 'rgb_array']}
