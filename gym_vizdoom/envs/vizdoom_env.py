@@ -68,7 +68,7 @@ class VizdoomEnv(gym.Env):
     self.game.set_doom_map(MAP_NAME_TEMPLATE % s)
     self.game.new_episode()
     current_state, _ = self._safe_get_set_state()
-    print("vizdooom_env map", s)
+    #print("vizdooom_env map", s)
     return current_state,s
 
   def render(self, mode='rgb_array'):
