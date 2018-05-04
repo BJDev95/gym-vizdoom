@@ -163,9 +163,9 @@ class MapManager(Environment):
         return ti
 
     def imagedisplay(self, image, name = "image"):
-        #cv2.imshow(name, image)
-        #cv2.waitKey(0)
-        #cv2.destroyAllWindows()
+        cv2.imshow(name, image)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
         pass
 
     def main():
