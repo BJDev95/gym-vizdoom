@@ -69,7 +69,7 @@ class VizdoomEnv(gym.Env):
   def reset(self):
     print('Episode reward: {}'.format(self.episode_reward))
     self.episode_reward = 0.0
-    s=self.np_random.randint(MIN_RANDOM_TEXTURE_MAP_INDEX, MAX_RANDOM_TEXTURE_MAP_INDEX + 1)
+    s=self.np_random.randint(MIN_RANDOM_TEXTURE_MAP_INDEX, MAX_RANDOM_TEXTURE_MAP_INDEX)
     self.game.set_doom_map(MAP_NAME_TEMPLATE % s)
     self.game.new_episode()
     current_state, _ = self._safe_get_set_state()
