@@ -161,13 +161,13 @@ class MapManager(Environment):
         temp=self.target_images[:,:, mapnumber]
         ti= temp[:, :, np.newaxis]
         return ti
-    '''
+
     def imagedisplay(self, image, name = "image"):
-        cv2.imshow(name, image)
+        cv2.imshow(name, image/255)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
         pass
-    '''
+
     def main():
         print("Not supposed to be used as main file")
 
