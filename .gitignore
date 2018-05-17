@@ -22,6 +22,5 @@
 !*.pc
 !*.tgn
 !*.cfg
-!gym_vizdoom/
 ._*
 !conda_env.txt
