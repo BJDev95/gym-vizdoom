@@ -64,10 +64,17 @@ def main():
         for i in range(1, a[:,1].size):
             a[i,1] = a[i,1] + a[i-1, 1]
 
-        plt.plot(a[:,0], a[:,1])
+        #plotting
+        schriftgrosse= 20
 
-        plt.ylabel("number of totally finished mazes")
-        plt.xlabel('Step Count')
+        plt.plot(4*a[:,0]-10000, a[:,1]/a[-1,1]*100)
+        plt.rc('font', size = schriftgrosse)
+        plt.grid(b=True, linestyle='-.', linewidth = 1.835, markevery = 0.5)
+        plt.axhline(y =100*a[-2,1]/a[-1,1], label =100*a[-2,1]/a[-1,1],  c ='r')
+        plt.text(x = 10, y =101*a[-2,1]/a[-1,1], s = 100*a[-2,1]/a[-1,1])
+
+        plt.ylabel("percentage of finished mazes", fontsize = schriftgrosse)
+        plt.xlabel('Step Count', fontsize = schriftgrosse)
         plt.show()
 
 
