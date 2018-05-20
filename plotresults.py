@@ -28,7 +28,7 @@ from collections import Counter
 
 """
 USAGE:
-python plotresults.py -f "logs/lastrun.log" -x "INFO:__main__:Episode reward:"
+python plotresults.py -f "logs/lastrun.log"
 """
 
 def main():
@@ -63,6 +63,10 @@ def main():
         a = a[np.lexsort(np.fliplr(a).T)]
         for i in range(1, a[:,1].size):
             a[i,1] = a[i,1] + a[i-1, 1]
+        a[:,1] = a[:,1]/a[-1,1]*100
+        a[:,0] = a[:,0]*4 -10000
+
+        np.savetxt('plotdata.csv', a, delimiter=';') #save to csv
 
         plt.plot(a[:,0], a[:,1])
 
@@ -74,7 +78,7 @@ def main():
 
 
 
-	
+
 
 
 if __name__ == '__main__':
