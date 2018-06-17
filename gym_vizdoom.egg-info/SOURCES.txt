@@ -1,0 +1,5 @@
+gym_vizdoom.egg-info/PKG-INFO
+gym_vizdoom.egg-info/SOURCES.txt
+gym_vizdoom.egg-info/dependency_links.txt
+gym_vizdoom.egg-info/requires.txt
+gym_vizdoom.egg-info/top_level.txt

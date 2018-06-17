@@ -27,7 +27,7 @@ ACTION_NAMES = ['MOVE_FORWARD', 'TURN_LEFT', 'TURN_RIGHT']
 WAIT_BEFORE_START_TICS = 140
 VIZDOOM_TO_TF = [1, 2, 0]
 ACTION_CLASSES = len(ACTIONS_LIST)
-MIN_RANDOM_TEXTURE_MAP_INDEX = 2
+MIN_RANDOM_TEXTURE_MAP_INDEX = 391
 MAX_RANDOM_TEXTURE_MAP_INDEX = 399
 TRAIN_REPEAT = 4
 NET_WIDTH = 160
@@ -66,14 +66,13 @@ class VizdoomEnv(gym.Env):
     current_state, done = self._safe_get_set_state()
     return current_state, reward, done, {}
 
-  def reset(self):
+  def reset(self):                                                                                                 #several changes in this function to handle the mapnumber.
     print('Episode reward: {}'.format(self.episode_reward))
     self.episode_reward = 0.0
     s=self.np_random.randint(MIN_RANDOM_TEXTURE_MAP_INDEX, MAX_RANDOM_TEXTURE_MAP_INDEX)
     self.game.set_doom_map(MAP_NAME_TEMPLATE % s)
     self.game.new_episode()
     current_state, _ = self._safe_get_set_state()
-    #print("vizdooom_env map", s)
     return current_state,s
 
   def render(self, mode='rgb_array'):

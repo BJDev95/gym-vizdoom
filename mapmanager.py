@@ -24,6 +24,10 @@ mm.get_target_image(mapname) # to retrieve the targetimage of the specified map 
 mm.get_random_map() #get a random map in specified range
 """
 
+
+#Mostly self written
+
+
 # ==============================================================================
 
 
